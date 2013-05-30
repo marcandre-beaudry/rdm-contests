@@ -13,15 +13,7 @@ function rdm_contests_add_interface() {
 	);
 	add_submenu_page(
 		"rdm-contests",
-		"RDM Contests - Contests List",
-		"Edit contests",
-		"manage_categories",
-		"rdm-contests-listing",
-		"rdm_contests_get_listing_page"
-	);
-	add_submenu_page(
-		"rdm-contests",
-		"RDM Contests - Create contest"
+		"RDM Contests - Create contest",
 		"Create new contest",
 		"manage_categories",
 		"rdm-contests-create",
@@ -34,4 +26,16 @@ function rdm_contests_add_interface() {
 		"rdm-contests-options",	
 		"rdm_contests_get_settings_page"
 	);
+}
+
+function rdm_contests_get_listing_page() {
+	echo "Hello world!";
+}
+
+function rdm_contests_get_creation_page() {
+	echo "Hello world!";
+}
+
+function rdm_contests_get_settings_page() {
+	echo "Hello world!";
 }
