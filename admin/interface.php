@@ -28,10 +28,10 @@ function rdm_contests_add_interface() {
 		"rdm_contests_get_creation_page"
 	);
 	add_options_page(
-		"RDM Contests - Settings",		// Page title
-		"RDM Contests"				// Menu title
-		"manage_options",			// Capability
-		"rdm-contests-options",			// Handle
-		"rdm_contests_get_settings_page"	// Function
+		"RDM Contests - Settings",
+		"RDM Contests"		
+		"manage_options",
+		"rdm-contests-options",	
+		"rdm_contests_get_settings_page"
 	);
 }
