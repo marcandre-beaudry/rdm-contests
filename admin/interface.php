@@ -47,13 +47,53 @@ function rdm_contests_get_edit_page() {
 }
 
 function rdm_contests_get_creation_page() {
+
+	$elements = rdm_contests_get_elements_array();
+
 ?>
 	<div class="wrap">
 		<div class="icon32" id="icon-options-general"><br></div>
 		<h2>RDM Contests - Create new contest</h2>
 		
+		<table class="form-table">
+			<tr valign="top">
+				<th scope="row"> Contest name : </th>
+				<td><input type="text" name="rdm_contests_name" id="rdm_contests_name" /></td>
+			</tr>
+			<tr valign="top">
+				<th scope="row"> Header image : </th>
+				<td><input type="button" name="rdm_contests_upload_image" id="rdm_contests_upload_image" /></td>
+			</tr>
+			<tr valign="top">
+				<th scope="row"> Contest begining date : </th>
+				<td><input type="text" class="rdm_contests_datepicker" name="rdm_contests_date_begin" id="rdm_contests_date_begin" /></td>
+			</tr>
+			<tr valign="top">
+				<th scope="row"> Contest ending date : </th>
+				<td><input type="text" class="rdm_contests_datepicker" name="rdm_contests_date_end" id="rdm_contests_date_end" /></td>
+			</tr>
+		</table>
+		<select>
+			<option value="">Choose a template</option>
+			<option value="simple">Simple contest</option>
+		</select> <input type="button" value="Load template" class="button_primary" id="rdm_contests_load_template" />
+		<div style="clear:both"></div>
+		<div style="width:45%;float:left;border-right:1px solid #aaaaaa;padding-right:15px;height:750px;">
 		
-	
+			<?php
+				foreach($elements as $element=>$properties) {
+
+					echo '<div class="widget">
+						<div class="widget-title"><h4 style="padding:5px">' . $element . '</h4></div>
+					</div>';
+				}
+			?>	
+		</div>
+		<div style="width:45%;float:left;">
+			&nbsp;	
+		</div>
+		<div style="clear:both;"></div>
+		<input type="button" class="button_primary" value="Submit contest" onClick="location.href='http://en.louloumagazine.com/contests/contests-contests/loulou-ecco-contest/';" />
 	</div>
 <?php 
 }

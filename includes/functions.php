@@ -1,12 +1,29 @@
 <?php
 
+function rdm_contests_add_admin_scripts() {
+	
+	wp_enqueue_script("jquery-ui-core");
+	wp_enqueue_script("jquery-ui-datepicker");
+	wp_enqueue_script("jquery-ui-draggable");
+	wp_enqueue_script("jquery-ui-droppable");
+	wp_enqueue_script("jquery-ui-selectable");
+
+	wp_enqueue_script("rdm_contests_js_functions", RDM_CONTESTS_MEDIA_URL . "/js/functions.js");
+
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_register_script('rdm-contests-upload-script', RDM_CONTESTS_MEDIA_URL . '/js/upload_script.js', array('jquery','media-upload','thickbox'));
+	wp_enqueue_script('rdm-contests-upload-script');
+
+	wp_enqueue_style('rdm_contests_datepicker_css', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');	
+}
+
+
 function rdm_contests_get_elements_array() {
 
 	$provines_code = rdm_contests_get_provinces_code();
 
-	$elements = array();
-
-	$elements[] = array(
+	$elements = array(
 		"first_name" => array("html" => "<label for='first_name'>First name: </label><input type='text' id='first_name' name='first_name' value='' />"),
 		"last_name" => array("html" => "<label for='last_name'>Last name: </label><input type='text' id='last_name' name='last_name' value='' />"),
 		"address" => array("html" => "<label for='address'>Address:</label>  <input type='text' id='address' name='address' value='' />"),
