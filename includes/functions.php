@@ -65,3 +65,8 @@ function rdm_contests_get_provinces_code() {
 			</select>";
 	return $provinces;
 }
+
+function brand_field_callback() {
+    $setting = esc_attr( get_option( 'brand_name' ) );
+    echo "<input type='text' name='brand_name' value='$setting' />";
+}

@@ -36,6 +36,12 @@ function rdm_contests_add_interface() {
 	);
 }
 
+function rdm_contests_settings_api_init() {
+	register_setting( 'rdm_contests_settings_group', 'rdm_contest_brand_name' );
+  add_settings_field( 'brand_field', 'Brand Field', 'brand_field_callback', 'rdm-contests-options');
+}
+
+
 function rdm_contests_get_edit_page() {
 ?>
 	<div class="wrap">
@@ -99,13 +105,5 @@ function rdm_contests_get_creation_page() {
 }
 
 function rdm_contests_get_settings_page() {
-?>
-	<div class="wrap">
-		<div class="icon32" id="icon-options-general"><br></div>
-		<h2>RDM Contests - Settings</h2>
-
-				
-			
-	</div>
-<?php 
+	require_once(RDM_CONTESTS_ADMIN_PATH . '/pages/settings.page.php');
 }

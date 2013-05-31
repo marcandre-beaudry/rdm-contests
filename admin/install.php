@@ -5,7 +5,7 @@ function rdm_contests_activate() {
 	global $wpdb;
 
 	$rdm_contests_table = "CREATE TABLE " . $wpdb->prefix . "rdm_contest (
-		ID BIGINT(20) NOT NULL AUTO_INCREMENT,
+		ID BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 		contest_name TEXT NOT NULL,
 		header_image TEXT NOT NULL,
 		date_begin DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL,
